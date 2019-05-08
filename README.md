@@ -15,9 +15,11 @@ jQuery Floatcard Pluginは、メッセージやブロック要素をコンテン
 
   ```javascript
   $(function() {
-    $.floatcard("message1");
-    $.floatcard("message2");
-    $.floatcard("message3");
+    // メッセージ文字列直接指定
+    $.floatcard("message");
+    
+    // 要素指定によるフロート表示
+    $("#element").floatcard();
   });
   ```
 
