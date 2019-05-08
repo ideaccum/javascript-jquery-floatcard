@@ -1,0 +1,91 @@
+<html>
+
+<head>
+	<!--<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>-->
+	<!--<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>-->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<!--<script type="text/javascript" src="jquery.floatcard.js"></script>-->
+	<script type="text/javascript" src="jquery.floatcard.min.js"></script>
+	<link type="text/css" rel="stylesheet" href="jquery.floatcard.css">
+	<style>
+	* {
+		font-size: 12px;
+	}
+	</style>
+
+	<script type="text/javascript">
+	$(function() {
+		// Standard
+		$("#first").floatcard();
+		$("#second").floatcard();
+		$("#hide").floatcard({autoHide : true, autoHideDelay : 3000});
+		$("#userBlock").floatcard();
+		$.floatcard();
+		$.floatcard("string");
+		$.floatcard(123456);
+		$.floatcard(true);
+
+		// Position
+		$.floatcard("right-top1", {position : "right-top"});
+		$.floatcard("right-top2", {position : "right-top"});
+		$.floatcard("right-bottom1", {position : "right-bottom"});
+		$.floatcard("right-bottom2", {position : "right-bottom"});
+		$.floatcard("left-top1", {position : "left-top"});
+		$.floatcard("left-top2", {position : "left-top"});
+		$.floatcard("left-bottom1", {position : "left-bottom"});
+		$.floatcard("left-bottom2", {position : "left-bottom"});
+		$.floatcard("center-top1", {position : "center-top"});
+		$.floatcard("center-top2", {position : "center-top"});
+		$.floatcard("center-bottom1", {position : "center-bottom"});
+		$.floatcard("center-bottom2", {position : "center-bottom"});
+		$.floatcard("fill-top1", {position : "fill-top"});
+		$.floatcard("fill-top2", {position : "fill-top"});
+		$.floatcard("fill-bottom1", {position : "fill-bottom"});
+		$.floatcard("fill-bottom2", {position : "fill-bottom"});
+		$.floatcard("fill-bottom2", {position : "fill-bottom"});
+		$.floatcard("fill-bottom2", {position : "fill-bottom"});
+		$.floatcard("fill-bottom2", {position : "fill-bottom"});
+		$.floatcard("fill-bottom2", {position : "fill-bottom"});
+
+		// State
+		$.floatcard("State styles.\n\"default\" state.", {state : "default"});
+		$.floatcard("State styles.\n\"fatal\" state.", {state : "fatal"});
+		$.floatcard("State styles.\n\"error\" state.", {state : "error"});
+		$.floatcard("State styles.\n\"warn\" state.", {state : "warn"});
+		$.floatcard("State styles.\n\"info\" state.", {state : "info"});
+		$.floatcard("State styles.\n\Illegal state.", {state : "illegal"});
+
+		// User Container
+		$.floatcard("Add to user container.", {container : "#userContainer"});
+		$.floatcard("Add to user container.", {container : "#userContainer"});
+		$.floatcard("Add to user container.", {container : "#userContainer"});
+		$.floatcard("Add to user container.", {container : "#userContainer"});
+		$.floatcard("Add to user container.", {container : "#userContainer"});
+		$.floatcard("Add to user container.", {container : "#userContainer"});
+		$.floatcard("Add to user container.", {container : "#userContainer"});
+		$.floatcard("Add to user container.", {container : "#userContainer"});
+	});
+	</script>
+</head>
+
+<body style="padding:0; margin:0;">
+
+<div id="first">This is test message.<br>At first line.</div>
+
+<div id="second">This is second message.</div>
+
+<div id="hide">This is auto hide message.<br>Hide after 3 seconds.</div>
+
+<div id="userBlock" style="margin: 0; padding: 3px; display: inline-block; position: fixed;">
+	<span style="color:red;">This is user block element.</span>
+	<div style="margin: 2px 0 0 0; padding: 3px; background-color: #8888ff;">
+		Inner block.
+	</div>
+</div>
+
+<div id="userContainer" style="position: fixed; top:50px; left:250px; width: 200px; height: 200px; overflow: scroll; border: 1px solid #ddd;">
+</div>
+
+</body>
+
+</html>
