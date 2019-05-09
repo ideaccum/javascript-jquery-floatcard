@@ -59,13 +59,14 @@
 	 * ディフォルトオプション
 	 */
 	var defaults = {
-		container : undefined,
 		autoHide : false,
 		autoHideDelay : 5000,
+		clone : true,
 		position : "right-top", // right-top, right-bottom, left-top, left-bottom, center-top, center-bottom, fill-top, fill-bottom
-		zIndex : undefined,
 		state : "default", // default, fatal, error, warn, info
-		styleClass : undefined
+		styleClass : undefined,
+		zIndex : 2000,
+		container : undefined,
 	};
 
 	/**
@@ -88,6 +89,7 @@
 		var options = $.extend({}, defaults, options);
 		var $element = element === undefined ? $("<div/>") : $(element);
 		$element.css("position", "static");
+		$element.attr("ui-floatcard-component", true);
 
 		/*
 		 * フロート要素生成
@@ -130,6 +132,7 @@
 			$floatcard.css("z-index", options.zIndex);
 		}
 		if (options.styleClass !== undefined) {
+			$floatcard.addClass("ui-floatcard-state-default");
 			$floatcard.addClass(options.styleClass);
 		} else {
 			if (options.state === "default") {
@@ -273,7 +276,16 @@
 	$.fn.floatcard = function(options) {
 		var options = $.extend({}, defaults, options);
 		return this.each(function() {
-			create($(this), options);
+			var $this = $(this);
+			if ($this.get(0) === undefined) {
+				return true;
+			}
+			if ($this.attr("ui-floatcard-component") !== undefined) {
+				return true;
+			}
+			var $target = options.clone === true ? $this.clone(true) : $this;
+			$target.css("display", "block");
+			create($target, options);
 		});
 	};
 

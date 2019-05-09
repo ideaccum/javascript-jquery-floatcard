@@ -131,6 +131,7 @@
 	padding: 0.18rem;
 	cursor: pointer;
 	fill: #888;
+	line-height: 0.18rem;
 }
 
 .ui-floatcard-icon-close svg {
