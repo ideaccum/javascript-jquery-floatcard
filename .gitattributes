@@ -1,0 +1,7 @@
+.settings/* linguist-vendored
+.classpath linguist-vendored
+.project linguist-vendored
+LIBRARIES.md linguist-vendored
+LICENSE.md linguist-vendored
+README.md linguist-vendored
+pom.xml linguist-vendored
